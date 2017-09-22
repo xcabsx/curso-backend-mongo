@@ -33,7 +33,7 @@ function saveUser(req, res){
         user.name = params.name;
         user.surname = params.surname;
         user.email = params.email;
-        user.rol = 'role_user';
+        user.role = 'role_user';
         user.image = null;
 
         User.findOne({email: user.email.toLowerCase()},(err, usuario)=>{
@@ -221,7 +221,7 @@ function getImageFile(req, res){
 }
 function getKeepers(req , res){
    User.find({
-      rol:'role_admin'
+      role:'role_admin'
    }).exec((err, users)=>{
        if(err){
            res.status(500).send({message: 'error en la peticion '});
