@@ -13,7 +13,7 @@ api.get('/pruebascontrolador', md_auth.ensureAuth, UserController.pruebas);
 api.post('/saveUser', UserController.saveUser);
 api.post('/login', UserController.login);
 api.post('/upload-image-user/:id', [md_auth.ensureAuth, md_upload] , UserController.uploadImage);
-api.post('/update-user/:id', md_auth.ensureAuth ,UserController.updateUser);
+api.put('/update-user/:id', md_auth.ensureAuth ,UserController.updateUser);
 api.get('/get-image-file/:imageFile',  UserController.getImageFile);
 api.get('/keepers',  UserController.getKeepers);
 

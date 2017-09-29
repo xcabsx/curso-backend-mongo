@@ -14,7 +14,14 @@ app.use(bodyParser.urlencoded({extended:false}));
 app.use(bodyParser.json());
 
 // configurar cors
+app.use((req,res, next)=>{
+   res.header('Access-Control-Allow-Origin','*');
+    res.header('Access-Control-Allow-Headers','Authorization, X-API-KEY, Origin, X-Requested-With , Content-Type, Accept, Access-Control-Allow-Request-Method');
+    res.header('Access-Control-Allow-Methods','POST, GET, OPTIONS, PUT');
+    res.header('Allow','GET, POST, OPTIONS, PUT');
+    next();
 
+});
 // rutas base
 app.use('/api', user_routes);
 app.use('/api', animal_routes);

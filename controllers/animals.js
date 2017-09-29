@@ -89,7 +89,7 @@ function updateAnimal(req, res) {
             if(!animalUpdated){
                 res.status(404).send({message: 'no se pudo actualizar el animal'});
             }else{
-                res.status(200).send({animal: animalUpdated});
+                res.status(200).send({animal: animalUpdated, message: 'voy'});
             }
         }
     });

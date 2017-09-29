@@ -60,7 +60,7 @@ function saveUser(req, res){
                     });
 
                 }else{
-                    res.status(500).send({message: 'usuario ya existe'});
+                    res.status(200).send({message: 'usuario ya existe'});
 
                 }
 
@@ -108,7 +108,7 @@ function login(req, res){
 
 
                    } else{
-                       res.status(500).send({message: "password incorrecto"});
+                       res.status(200).send({message: "password incorrecto"});
                    }
                 });
 
